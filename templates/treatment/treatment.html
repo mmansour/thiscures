@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load mezzanine_tags keyword_tags %}
+
+{% block meta_title %}{{ treatment_data.title|title }} Treatment{% endblock %}
+{% block meta_title_append %}{{ treatment_data.title }}{% endblock %}
+
+{% block meta_keywords %}
+{% endblock %}
+
+{% block meta_description %}
+This page brings to light the most effective {{ treatment_data.title }} remedies.
+{% endblock %}
+
+{% block title %}
+    {{ treatment_data.title|title }} Remedies
+{% endblock %}
+
+{% block main %}
+    {{ treatment_data.subject_data|safe }}
+    {{ treatment_data.subject_data_treatment|safe }}
+    {{ treatment_data.subject_data_natural_cures|safe }}
+    <hr />
+    <h3>Data sources</h3>
+    <ul>
+    {{ treatment_data.subject_data_sources|safe }}
+    </ul>
+{% endblock %}

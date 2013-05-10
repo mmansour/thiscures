@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block meta_title %}{% trans "Home" %}{% endblock %}
+{% block title %}{% trans "Home" %}{% endblock %}
+
+{% block breadcrumb_menu %}
+<li class="active">{% trans "Home" %}</li>
+{% endblock %}
+
+{% block main %}
+<h2>{% trans "Welcome to This Cures" %}!</h2>
+<p>{% trans "This Cures is a collection of remedies, cures and treatment that have been shared by others." %}
+
+</p>
+<h3>{% trans "Most Recent Remedies" %}</h3>
+<ul>
+    {% for treatment in most_recent %}
+        <li>Treatment for <a href="{{ treatment.get_absolute_url }}">{{ treatment.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
