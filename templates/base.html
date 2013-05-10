@@ -116,7 +116,14 @@
 
 <footer>
 <div class="container">
-{% page_menu "pages/menus/footer.html" %}
+<ul class="footer-tree-menu-level-0">
+    <li><a href="/">Home</a> <span class="separator">|</span></li>
+    <li><a href="/contact/">Contact</a></li>
+</ul>
+
+{% comment %}    <span class="separator">|</span>
+    <a href="/privacy-policy/">Privacy Policy</a>{% endcomment %}
+{% comment %}{% page_menu "pages/menus/footer.html" %}
 <p>
     {% trans "Powered by" %}
     <a href="http://mezzanine.jupo.org">Mezzanine</a>{% ifinstalled cartridge.shop %},
@@ -129,7 +136,8 @@
     <span class="separator">|</span>
     <a href="{% url "set_device" "mobile" %}?next={{ request.path }}">{% trans "View Mobile Site" %}</a>
     {% endifinstalled %}
-</p>
+</p>{% endcomment %}
+    
 </div>
 </footer>
 
